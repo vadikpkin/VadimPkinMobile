@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import setup.BaseTest;
 
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 import static util.PropertiesSingletone.getPropertyByName;
 
 public class webMobileTests extends BaseTest {
@@ -25,8 +25,7 @@ public class webMobileTests extends BaseTest {
         getDriver().findElement(By.xpath("//input[@name='q']")).sendKeys(search);
         getDriver().findElement(By.xpath("//button[@class='Tg7LZd']")).click();
         //Asserting search results
-        String epamSiteDescription = "EPAM | Enterprise Software Development, Design & Consulting";
-        WebElement result = getDriver().findElement(By.xpath("//div[contains(text(),'" + epamSiteDescription + "')]"));
-        assertEquals(result.getText(), epamSiteDescription, "Wrong result");
+        WebElement result = getDriver().findElement(By.cssSelector("#rso > div"));
+        assertTrue(result.getText().contains(search), "Search result is not expected");
     }
 }
