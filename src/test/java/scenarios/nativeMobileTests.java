@@ -21,6 +21,7 @@ public class nativeMobileTests extends BaseTest {
         po.getWelement("usernameInput").sendKeys(username);
         po.getWelement("passwordInput").sendKeys(password);
         po.getWelement("confirmInput").sendKeys("testPassword");
+        po.getWelement("registrationTermsCheckbox").click();
         po.getWelement("registerNewAccountBtn").click();
         //Sign in
         po.getWelement("emailAuthInput").sendKeys(email);
