@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
-    IPageObject po;
+    private static IPageObject po;
 
     @Override
     public AppiumDriver getDriver() { return appiumDriver; }
@@ -68,7 +68,7 @@ public class BaseTest implements IDriver {
             e.printStackTrace();
         }
         // Timeouts tuning
-        appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        appiumDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {

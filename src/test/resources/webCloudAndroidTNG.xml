@@ -1,8 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="EPAM mobile cloud Web testing Suite">
     <parameter name="appType" value="web"></parameter>
-    <!--parameter name="deviceName" value="SAMSUNG SM-G960F"></parameter-->
-    <parameter name="udid" value="B2NGAA8862101803"></parameter>
+    <parameter name="udid" value="9201c29b8dcf3597"></parameter>
     <parameter name="platformName" value="Android"></parameter>
     <parameter name="browserName" value="Chrome"></parameter>
     <test name="Cloud Web tests">

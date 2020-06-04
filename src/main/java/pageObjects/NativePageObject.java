@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 public class NativePageObject {
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/add_new_expense")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='Budget']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@label='Budget']")
     WebElement addNewExpenseBtn;
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_email")

@@ -1,5 +1,7 @@
 package scenarios;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import setup.BaseTest;
 import setup.IPageObject;
@@ -10,7 +12,8 @@ import static util.PropertiesSingletone.getPropertyByName;
 public class nativeMobileTests extends BaseTest {
 
     @Test(groups = {"native"}, description = "Registration new user and then login as that user test")
-    public void registrationAndLoginTest() throws IllegalAccessException, NoSuchFieldException, InstantiationException {
+    public void registrationAndLoginTest()
+        throws IllegalAccessException, NoSuchFieldException, InstantiationException, InterruptedException {
         IPageObject po = getPo();
         //Register new user
         String username = getPropertyByName("username");
@@ -20,7 +23,7 @@ public class nativeMobileTests extends BaseTest {
         po.getWelement("emailInput").sendKeys(email);
         po.getWelement("usernameInput").sendKeys(username);
         po.getWelement("passwordInput").sendKeys(password);
-        po.getWelement("confirmInput").sendKeys("testPassword");
+        po.getWelement("confirmInput").sendKeys(password);
         po.getWelement("registrationTermsCheckbox").click();
         po.getWelement("registerNewAccountBtn").click();
         //Sign in
