@@ -1,4 +1,6 @@
 ### How to start
+Before start you need to specify API token for EPAM mobile cloud in pom.xml properties and set udid 
+in particular .xml file in test/resources
 * to run cloud web android application test execute:`mvn clean test -Pcloud_web_android`
 * to run cloud native android application test execute:`mvn -Pcloud_native_android clean test`
 * to run cloud web ios application test execute:`mvn -P cloud_web_ios clean test`
