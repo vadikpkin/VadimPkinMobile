@@ -23,8 +23,8 @@ public class webMobileTests extends BaseTest {
         new WebDriverWait(getDriver(), 10).until(
             wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete")
         );
-        //Entering EPAM to search input and clicks search button
-        String search = "EPAM";
+        //Entering word to search input and clicks search button
+        String search = getPropertyByName("search");
         po.getWelement("searchInput").sendKeys(search);
         po.getWelement("searchBtn").click();
         //Asserting search results
